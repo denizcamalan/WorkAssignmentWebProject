@@ -14,3 +14,5 @@ require github.com/mattn/go-sqlite3 v1.14.12
 # Usage
 
 with -- localhost:8080
+
+used Monolotic Architecture
