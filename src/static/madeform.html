@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+
+<body>
+    <header>
+        <ul class="link">
+            <li><a href="">header link one</a></li>
+            <li><a href="">header link two</a></li>
+            <li><a href="">header link three</a></li>
+            <li>
+        </ul>
+    </header>
+    <div class="main">
+        <div class="info">
+            <h1 style="font-size: 48px; color: #f9faf8;">Please Assign Work</h1>
+        </div>
+    </div>
+    <div class="info2">
+        <form id="form_action" method="post" action="addnew">
+
+            <label for="from">From</label>
+            <input type="text" id="from" name="from">
+            <br>
+            <label for="to">To</label>
+            <input type="text" id="to" name="to">
+            <br>
+            <label for="date">Due Date</label>
+            <input type="date" id="date" name="date">
+            <br>
+            <label for="issue">Issue</label>
+            <input class="long1" type="text" id="issue" name="issue">
+            <br>
+            <label for="comment">Comment</label>
+            <input class="long2" type="text" id="comment" name="comment">
+            <br>
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="working">Working..</option>
+                <option value="completed">Completed</option>
+                <option value="assigned">Assigned</option>
+              </select>
+            <br>
+            <button type="submit">Send Assignment</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>Copyright © Go Bootcamp 2022
+        </p>
+    </div>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        .link {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        header,
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        .account {
+            display: flex;
+            justify-content: space-between;
+            gap: 70px;
+            height: 500px;
+            background-color: tan;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        header,
+        .main,
+        .footer {
+            background-color: #1f2937;
+            color: #f9faf8;
+            padding: 15px;
+        }
+        
+        input,
+        button {
+            border-style: double;
+            border-radius: 10px;
+            padding: 10px 35px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 500px;
+            justify-items: center;
+        }
+        
+        .long1,
+        .long2 {
+            width: 500px;
+        }
+    </style>
+</body>
+
+</html>

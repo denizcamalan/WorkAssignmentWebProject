@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=auto, initial-scale=1.0">
+    <title>deniz</title>
+
+</head>
+
+<body>
+    <header>
+        <li>
+            <form method="post" action="/deniz/logout">
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+    </header>
+    <div class="main">
+        <div class="info">
+            <h1 style="font-size: 48px; color: #f9faf8;">Welcome DENIZ !</h1>
+        </div>
+    </div>
+    <div class="account">
+        <div>
+            <li>
+                <form action="/deniz/dbpage">
+                    <input type="submit" value="Create Assignment" />
+                </form>
+            </li>
+            <li>
+                <form action="/deniz/assignment">
+                    <input type="submit" value="Assignments" />
+                </form>
+            </li>
+        </div>
+        <div>
+            <li>
+                <form method="post" action="/deniz/updatepass">
+                    <label for="password">Change Password</label>
+                    <input type="password" id="password" name="password">
+                    <button type="submit">Change</button>
+                </form>
+            </li>
+            <li>
+                <form method="post" action="/deniz/delete">
+                    <button type="submit">Delete Account</button>
+                </form>
+            </li>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © Go Bootcamp 2022</p>
+    </div>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        .link {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        header,
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        .account {
+            display: flex;
+            justify-content: space-between;
+            gap: 70px;
+            height: 500px;
+            align-items: center;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        header,
+        .main,
+        .footer {
+            background-color: #1f2937;
+            color: #f9faf8;
+            padding: 15px;
+        }
+        
+        .info {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            align-items: center;
+        }
+    </style>
+</body>
+
+</html>
