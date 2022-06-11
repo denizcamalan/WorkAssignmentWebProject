@@ -1,0 +1,5 @@
+{
+    "go.gotoSymbol.includeGoroot": true,
+    "go.gotoSymbol.includeImports": true,
+    "go.toolsManagement.autoUpdate": true
+}
