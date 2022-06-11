@@ -61,7 +61,7 @@ func index(response http.ResponseWriter, request *http.Request) {
 
 // login handler
 func loginPage(response http.ResponseWriter, request *http.Request) {
-	http.ServeFile(response, request, "./innerPage/login.html")
+	http.ServeFile(response, request, "./html/login.html")
 	fmt.Println(getUserName(request),6)
 }
 
