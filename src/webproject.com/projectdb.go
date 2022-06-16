@@ -7,7 +7,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var db, _ = sql.Open("sqlite3", "accounts.db")
+var db, _ = sql.Open("sqlite3", "./dataBase/accounts.db")
 
 type UserAccounts struct {
 	Number int
