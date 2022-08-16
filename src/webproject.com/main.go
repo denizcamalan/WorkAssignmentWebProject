@@ -30,5 +30,4 @@ func main() {
 	router.HandleFunc("/{Uname}/delete", deleteHandler).Methods("POST")
 	http.Handle("/", router)
 	http.ListenAndServe(":8080", nil)
-
 }

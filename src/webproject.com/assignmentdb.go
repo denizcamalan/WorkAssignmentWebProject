@@ -7,7 +7,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var db2, _ = sql.Open("sqlite3", "assignmentdb.db")
+var db2, _ = sql.Open("sqlite3", "./dataBase/assignmentdb.db")
 
 type Assignment_Form struct {
 	IssueNumber int
