@@ -55,21 +55,13 @@ func clearSession(response http.ResponseWriter) {
 
 func index(response http.ResponseWriter, request *http.Request) {
 	
-<<<<<<< Updated upstream
-	http.ServeFile(response, request, "./html/index.html")
-=======
 	http.ServeFile(response, request, "../../index.html")
->>>>>>> Stashed changes
 	//userPage("deniz", response)
 }
 
 // login handler
 func loginPage(response http.ResponseWriter, request *http.Request) {
-<<<<<<< Updated upstream
-	http.ServeFile(response, request, "./html/login.html")
-=======
 	http.ServeFile(response, request, "../../login.html")
->>>>>>> Stashed changes
 	fmt.Println(getUserName(request),6)
 }
 
@@ -111,28 +103,20 @@ func addNewAssign(response http.ResponseWriter, request *http.Request) {
 	
 	addNewDb(db2, name,toname,due,issue,comment,status)
 	http.Redirect(response, request, "/"+name, http.StatusFound)
-	fmt.Println(getUserName(request),3453)
+	//fmt.Println(getUserName(request),3453)
 }
 
 // add assignment and send other user
 
 func dbpage(response http.ResponseWriter, request *http.Request){
-<<<<<<< Updated upstream
-	http.ServeFile(response, request, "./html/madeform.html")
-=======
 	http.ServeFile(response, request, "../../madeform.html")
->>>>>>> Stashed changes
 
 }
 
 func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 	userName := getUserName(request)
 	if userName != "" {
-<<<<<<< Updated upstream
-		tmpl := template.Must(template.ParseFiles("./html/innerPage.html"))
-=======
 		tmpl := template.Must(template.ParseFiles("../../innerPage.html"))
->>>>>>> Stashed changes
         	variable := AccountName{
 				PageName: userName,
 				WserName: userName,
@@ -144,11 +128,7 @@ func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 			}
         	tmpl.Execute(response, variable)
 			
-<<<<<<< Updated upstream
-		http.ServeFile(response, request, "./html/innerPage.html")
-=======
 		http.ServeFile(response, request, "../../innerPage.html")
->>>>>>> Stashed changes
 		fmt.Println(getUserName(request),7)
 	}
 }
@@ -157,11 +137,7 @@ func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 func assignmentPage(response http.ResponseWriter, request *http.Request){
 	data := getAssigment(db2)
 	vars := mux.Vars(request)
-<<<<<<< Updated upstream
-	tmpl := template.Must(template.ParseFiles("layout.html"))
-=======
 	tmpl := template.Must(template.ParseFiles("../../layout.html"))
->>>>>>> Stashed changes
 	for i:=0 ; i<len(data); i++{
 		if vars["Uname"] ==  data[i].To{
 			b := Assignment_Form{IssueNumber: data[i].IssueNumber ,From: data[i].From,To: data[i].To ,DueDate: data[i].DueDate, Problem: data[i].Problem, Comment: data[i].Comment,Status: data[i].Status}
@@ -208,21 +184,13 @@ func updateAssHandler(response http.ResponseWriter, request *http.Request){
 	fmt.Println(getUserName(request),90)
 }
 func updateAssPageHandler(response http.ResponseWriter, request *http.Request){
-<<<<<<< Updated upstream
-	http.ServeFile(response, request, "./html/updass.html")
-=======
 	http.ServeFile(response, request, "../../updass.html")
->>>>>>> Stashed changes
 	fmt.Println(getUserName(request),70)
 }
 
 // add new user
 func signinPage(response http.ResponseWriter, request *http.Request) {
-<<<<<<< Updated upstream
-	http.ServeFile(response, request, "./html/signin.html")
-=======
 	http.ServeFile(response, request, "../../signin.html")
->>>>>>> Stashed changes
 	fmt.Println(getUserName(request),10)
 }
 
