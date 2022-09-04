@@ -55,13 +55,13 @@ func clearSession(response http.ResponseWriter) {
 
 func index(response http.ResponseWriter, request *http.Request) {
 	
-	http.ServeFile(response, request, "../../index.html")
+	http.ServeFile(response, request, "../../docs/index.html")
 	//userPage("deniz", response)
 }
 
 // login handler
 func loginPage(response http.ResponseWriter, request *http.Request) {
-	http.ServeFile(response, request, "../../login.html")
+	http.ServeFile(response, request, "../../docs/login.html")
 	fmt.Println(getUserName(request),6)
 }
 
@@ -109,14 +109,14 @@ func addNewAssign(response http.ResponseWriter, request *http.Request) {
 // add assignment and send other user
 
 func dbpage(response http.ResponseWriter, request *http.Request){
-	http.ServeFile(response, request, "../../madeform.html")
+	http.ServeFile(response, request, "../../docs/madeform.html")
 
 }
 
 func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 	userName := getUserName(request)
 	if userName != "" {
-		tmpl := template.Must(template.ParseFiles("../../innerPage.html"))
+		tmpl := template.Must(template.ParseFiles("../../docs/innerPage.html"))
         	variable := AccountName{
 				PageName: userName,
 				WserName: userName,
@@ -128,7 +128,7 @@ func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 			}
         	tmpl.Execute(response, variable)
 			
-		http.ServeFile(response, request, "../../innerPage.html")
+		http.ServeFile(response, request, "../../docs/innerPage.html")
 		fmt.Println(getUserName(request),7)
 	}
 }
@@ -137,7 +137,7 @@ func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 func assignmentPage(response http.ResponseWriter, request *http.Request){
 	data := getAssigment(db2)
 	vars := mux.Vars(request)
-	tmpl := template.Must(template.ParseFiles("../../layout.html"))
+	tmpl := template.Must(template.ParseFiles("../../docs/layout.html"))
 	for i:=0 ; i<len(data); i++{
 		if vars["Uname"] ==  data[i].To{
 			b := Assignment_Form{IssueNumber: data[i].IssueNumber ,From: data[i].From,To: data[i].To ,DueDate: data[i].DueDate, Problem: data[i].Problem, Comment: data[i].Comment,Status: data[i].Status}
@@ -184,13 +184,13 @@ func updateAssHandler(response http.ResponseWriter, request *http.Request){
 	fmt.Println(getUserName(request),90)
 }
 func updateAssPageHandler(response http.ResponseWriter, request *http.Request){
-	http.ServeFile(response, request, "../../updass.html")
+	http.ServeFile(response, request, "../../docs/updass.html")
 	fmt.Println(getUserName(request),70)
 }
 
 // add new user
 func signinPage(response http.ResponseWriter, request *http.Request) {
-	http.ServeFile(response, request, "../../signin.html")
+	http.ServeFile(response, request, "../../docs/signin.html")
 	fmt.Println(getUserName(request),10)
 }
 
