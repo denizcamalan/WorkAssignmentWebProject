@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -103,6 +104,6 @@ func updateAccount(db *sql.DB, userName, Password string, Number int){
 
 func checkError (err error){
 	if err != nil {
-		panic("NOLUYİ")
+		log.Println("Error has accured")
 	}
 }

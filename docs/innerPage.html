@@ -12,7 +12,7 @@
 <body>
     <header>
         <li>
-            <form method="post" action="/{{.ActionLog}}/logout">
+            <form method="post" action="/denizcamalan.github.io/{{.ActionLog}}/logout">
                 <button type="submit">Logout</button>
             </form>
         </li>
@@ -25,26 +25,26 @@
     <div class="account">
         <div>
             <li>
-                <form action="/{{.ActionCreate}}/dbpage">
+                <form action="/denizcamalan.github.io/{{.ActionCreate}}/dbpage">
                     <input type="submit" value="Create Assignment" />
                 </form>
             </li>
             <li>
-                <form action="/{{.ActionGetAss}}/assignment">
+                <form action="/denizcamalan.github.io/{{.ActionGetAss}}/assignment">
                     <input type="submit" value="Assignments" />
                 </form>
             </li>
         </div>
         <div>
             <li>
-                <form method="post" action="/{{.ActionUpdate}}/updatepass">
+                <form method="post" action="/denizcamalan.github.io/{{.ActionUpdate}}/updatepass">
                     <label for="password">Change Password</label>
                     <input type="password" id="password" name="password">
                     <button type="submit">Change</button>
                 </form>
             </li>
             <li>
-                <form method="post" action="/{{.ActionDelete}}/delete">
+                <form method="post" action="/denizcamalan.github.io/{{.ActionDelete}}/delete">
                     <button type="submit">Delete Account</button>
                 </form>
             </li>

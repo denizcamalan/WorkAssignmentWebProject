@@ -80,13 +80,13 @@ func loginHandler(response http.ResponseWriter, request *http.Request) {
 				// checking ..
 				vars["Uname"] = name
 				setSession(name, response)
-				redirectTarget = fmt.Sprintf("/%s", name)
+				redirectTarget = fmt.Sprintf("/denizcamalan.github.io/%s", name)
 				break
 		}else if i==len(arrayData) && oneData.Username != name && oneData.Password != pass || (name == "" && pass == "") {
-			redirectTarget = "/loginpage"
+			redirectTarget = "/denizcamalan.github.io/loginpage"
 			log.Println("Wrong Password")
 		}else{
-			redirectTarget = "/loginpage"
+			redirectTarget = "/denizcamalan.github.io/loginpage"
 			log.Println("Wrong Password")
 		}
 	}
@@ -173,11 +173,11 @@ func updateAssHandler(response http.ResponseWriter, request *http.Request){
 			fmt.Println(data[k].To)
 			fmt.Println(data[k].From)
 			updateAssignment(db2,status,intNum)
-			redirectTarget = fmt.Sprintf("/%s", data[k].To)
+			redirectTarget = fmt.Sprintf("/denizcamalan.github.io/%s", data[k].To)
 			fmt.Println(redirectTarget)
 			break
 		}else{
-			redirectTarget = fmt.Sprintf("/%s", data[k].To)
+			redirectTarget = fmt.Sprintf("/denizcamalan.github.io/%s", data[k].To)
 		}
 	}
 	http.Redirect(response, request, redirectTarget, http.StatusFound)
@@ -199,12 +199,12 @@ func signinHandler(response http.ResponseWriter, request *http.Request) {
 	pass := request.FormValue("newPassword")
 
 		if name != "" && pass != ""{
-			redirectTarget = "/loginpage"
+			redirectTarget = "/denizcamalan.github.io/loginpage"
 			addNew(db,name,pass)
 			fmt.Println(getUserName(request),1)
 			fmt.Println("added new user")
 		}else {
-			redirectTarget = "/signinpage"
+			redirectTarget = "/denizcamalan.github.io/signinpage"
 			fmt.Println(getUserName(request),2)
 		}	
 	http.Redirect(response, request, redirectTarget, http.StatusFound)
@@ -220,7 +220,7 @@ func updatepassHandler(response http.ResponseWriter, request *http.Request){
 	for i:=0 ; i<len(arrayData) ; i++ {
 		oneData := arrayData[i]
 		if (oneData.Username) == name{
-			redirectTarget = "/"
+			redirectTarget = "/denizcamalan.github.io/"
 			updateAccount(db,oneData.Username,pass,oneData.Number)
 			fmt.Println(getUserName(request),20)
 		}
@@ -251,7 +251,7 @@ func deleteHandler(response http.ResponseWriter, request *http.Request){
 	for i:=0 ; i<len(arrayData) ; i++ {
 		oneData := arrayData[i]
 		if (oneData.Username) == name{
-			redirectTarget = "/"
+			redirectTarget = "/denizcamalan.github.io/"
 			deleteAccount(db,oneData.Number)
 			fmt.Println(getUserName(request),20)
 		}
