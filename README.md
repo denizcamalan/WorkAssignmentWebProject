@@ -11,6 +11,10 @@ require github.com/gorilla/securecookie v1.1.1
 
 require github.com/mattn/go-sqlite3 v1.14.12
 
+## Main Page Preview
+
+[https://denizcamalan.github.io/WorkAssignmentWebProject/](https://denizcamalan.github.io/WorkAssignmentWebProject/)
+
 # Usage
 
 with -- localhost:8080
